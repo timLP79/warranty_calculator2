@@ -1,4 +1,4 @@
-# Warranty Caclulator
+# Warranty Calculator
 
 This is a simple, browser-based tool that helps users calculate warranty expiration dates based on a selected purchase date. It displays standard expiration periods such as 1, 3, 5, and 25 years from the chosen date.
 
