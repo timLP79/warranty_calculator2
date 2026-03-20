@@ -1,313 +1,326 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+/* ============================================================
+   Warranty Calculator -- Warm Editorial Theme
+   ============================================================ */
 
 :root {
-  --bsu-blue: #0033A0;
-  --bsu-orange: #D64309;
-  --bsu-light-gray: #f4f4f4;
-  --bsu-dark-gray: #333;
-  --bsu-white: #fff;
+    --bg:           #ede8df;
+    --surface:      #f8f5f0;
+    --white:        #ffffff;
+    --ink:          #1c2530;
+    --ink-mid:      #4a5568;
+    --ink-muted:    #8a96a4;
+    --ink-faint:    #c2c9d2;
+    --accent:       #a0622a;
+    --accent-light: #f3e8dc;
+    --success:      #2d6a4f;
+    --success-bg:   #ebf6f0;
+    --success-mid:  #52b788;
+    --danger:       #9b2c2c;
+    --danger-bg:    #fdf0f0;
+    --danger-mid:   #e07070;
+    --border:       #d0c8bc;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'DM Sans', system-ui, sans-serif;
+    --font-mono:    'DM Mono', 'Courier New', monospace;
+    --radius:       4px;
 }
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 2rem;
-  background-color: var(--bsu-light-gray);
-  color: var(--bsu-dark-gray);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-h1, h2 {
-  color: var(--bsu-blue);
+/* ============================================================
+   PAGE SHELL
+   ============================================================ */
+.page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
 }
 
-form {
-  background-color: var(--bsu-white);
-  padding: 1rem;
-  border: 1px solid var(--bsu-blue);
-  border-radius: 5px;
-  max-width: 500px;
+/* ============================================================
+   HEADER
+   ============================================================ */
+.page-header {
+    margin-bottom: 3rem;
 }
 
-label {
-  display: block;
-  margin-top: 0.5rem;
-  font-weight: 600;
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.15s;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-  width: 100%;
-  padding: 0.4rem;
-  margin-top: 0.2rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.back-link:hover { color: var(--accent); }
+
+.header-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
 }
 
-button {
-  background-color: var(--bsu-blue);
-  color: var(--bsu-white);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
+h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--ink);
 }
 
-button:hover {
-  background-color: var(--bsu-orange);
+h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
 }
 
-hr {
-  margin: 2rem 0;
-  border: none;
-  height: 1px;
-  background-color: #ccc;
-}
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+.header-desc {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    max-width: 420px;
+    line-height: 1.7;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+/* ============================================================
+   FORM
+   ============================================================ */
+.form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+.field-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
 }
 
-#warrantyDetails {
-  background-color: #ffffff;
-  border-left: 4px solid var(--bsu-blue);
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 5px;
-}
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+.field-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+.date-input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    padding: 0.65rem 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+.date-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(160, 98, 42, 0.12);
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+.calc-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.65rem 1.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.1s;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
+.calc-btn:hover  { background: var(--accent); }
+.calc-btn:active { transform: scale(0.97); }
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+.form-error {
+    font-size: 0.8rem;
+    color: var(--danger);
+    margin-top: 0.6rem;
+    font-family: var(--font-mono);
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+/* ============================================================
+   RESULTS
+   ============================================================ */
+.results-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.results-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    flex-shrink: 0;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+.results-purchase-date {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
 }
 
-.clearfix::after {
-  clear: both;
+/* ============================================================
+   WARRANTY CARDS
+   ============================================================ */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+.warranty-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: cardIn 0.3s ease forwards;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+@keyframes cardIn {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+.card-active { border-left: 3px solid var(--success-mid); }
+.card-expired { border-left: 3px solid var(--danger-mid); }
 
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.35rem;
 }
 
+.card-period {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+
+.card-badge {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    padding: 0.2rem 0.45rem;
+    border-radius: 2px;
+}
+
+.badge-active {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.badge-expired {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.card-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-mid);
+    line-height: 1.4;
+}
+
+.card-count {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+}
+
+.card-active .card-count { color: var(--success); }
+.card-expired .card-count { color: var(--danger); }
+
+/* ---- Timeline bar ---- */
+.bar-track {
+    height: 3px;
+    background: var(--ink-faint);
+    border-radius: 2px;
+    margin-top: auto;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-active  .bar-fill { background: var(--success-mid); }
+.card-expired .bar-fill { background: var(--danger-mid); }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.hidden { display: none !important; }
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 540px) {
+    .page { padding: 2rem 1rem 4rem; }
+
+    h1 { font-size: clamp(2.4rem, 12vw, 3.5rem); }
+
+    .field-row { flex-direction: column; }
+    .calc-btn  { justify-content: center; }
+
+    .cards-grid { grid-template-columns: 1fr; }
+
+    .results-meta { flex-direction: column; gap: 0.2rem; }
+}
